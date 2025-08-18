@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function isAutomorph(num){
+            let sq=num*num;
+            while(num>0){
+                if((num%10)!=(sq%10)) return false;
+
+                num=Math.trunc(num/10);
+                sq=Math.trunc(sq/10);
+            }
+            return true;
+        }
+
+         //AutoMorphic number with in a range
+        function inRange(up=0,low=0){
+            let row = "";
+        for(let i=low;i<=up;i++)
+        {
+            if(isAutomorph(i))  row = row+i+" ";
+        }
+        console.log(`Automorphic numbers between ${low} and ${up}: ${row}`);
+        }
+
+        main();
+        function main(){
+            inRange(100);
+        }
+    </script>
+    <title>automorphic</title>
+</head>
+<body>
+    <h1>Automorphic number</h1>
+</body>
+</html>

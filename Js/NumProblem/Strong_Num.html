@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function factorial(n)
+        {
+            let prod = 1;
+            for(let i=2;i<=n;i++)
+            {
+                prod *= i;
+            }
+            return prod;
+        }
+
+        function isStrong(num){
+            let temp=num;
+            let sum=0;
+            while(temp>0){
+                sum+=factorial(temp%10);
+                temp=Math.trunc(temp/10);
+            }
+            return sum==num;
+        }
+
+        main()
+        function main(){
+            console.log(isStrong(145));
+        }
+    </script>
+    <title>Strong Number</title>
+</head>
+<body>
+    <h1>Strong Number</h1>
+</body>
+</html>

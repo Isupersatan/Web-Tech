@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function count(num){
+            let c=0;
+            while(num>0){
+                c++;
+                num=Math.trunc(num/10);
+            }
+            return c;
+        }
+
+        function isDisarium(num){
+            let temp=num, sum=0, power=count(num);
+            while(temp>0){
+                //sum+=Math.pow(temp%10,power);
+                let dig=temp%10,prod=1;
+                for(let i=1;i<=power;i++){
+                    prod*=dig;
+                }
+                sum+=prod;
+                temp=Math.trunc(temp/10);
+                power--;
+            }
+            return sum==num;
+        }
+
+        main()
+        function main(){
+            console.log(isDisarium(175));
+        }
+    </script>
+    <title>armstrong</title>
+</head>
+<body>
+    <h1>Armstrong Number</h1>
+</body>
+</html>

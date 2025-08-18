@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum Of Digits</title>
+    <script>
+        "use strict"
+        function main(){
+            let num = prompt("Enter a number");
+            if(num=="") {
+                console.log(`please provide input.`);
+                return;
+            }
+            if(num==null)   return;
+            num = Number(num);
+            if(isNaN(num)||num<0){
+                console.log(`please provide valid positive number input`);
+                return;
+            }
+            console.log(`sum of digits of ${num} is ${sumOfDig(num)}`);
+        }
+        main();
+
+        function sumOfDig(n){
+            let sum = 0;
+            while(n>0){
+                sum+=n%10;
+                n=Math.trunc(n/10);
+            }
+            return sum;
+        }
+    </script>
+</head>
+<body>
+    <h1>Sum Of Digits</h1>
+</body>
+</html>

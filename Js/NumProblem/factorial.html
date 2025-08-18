@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function factorial(n)
+        {
+            let prod = 1;
+            for(let i=2;i<=n;i++)
+            {
+                prod *= i;
+            }
+            return prod;
+        }
+
+        function main()
+        {
+            let num = prompt("Enter a num");
+            if(num==""||num==null)
+            {
+
+                console.log(`invalid input or negative input or not providing input not supported`);
+                return;
+            }
+            num=Number(num);
+            if(isNaN(num)||num<0){
+            console.log(`invalid input or negative input or not providing input not supported`);
+             return;
+            }
+            console.log(`Factorial of ${num} is ${factorial(num)}`);
+        }
+        main();
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

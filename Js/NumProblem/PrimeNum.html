@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script>
+    //check Prime Number
+    function isPrime(num){
+        if(num<2)   return false;
+        for(let i=2;i<=Math.trunc(num/2);i++){
+            if(num%i==0) return false;
+        }
+        return true;
+    }
+    //prime number with in a range
+    function inRange(up=0,low=0){
+        let row = "";
+       for(let i=low;i<=up;i++)
+       {
+        if(isPrime(i))  row = row+i+" ";
+       }
+       console.log(`prime numbers between ${low} and ${up}: ${row}`);
+    }
+
+    //smallest prime number
+    function smallest(up=0,low=0){
+        let count=0;
+       for(let i=low;i<=up;i++)
+       {
+            if(isPrime(i)){
+                count++;
+                if(count==2){
+                    console.log(`${count} smallest prime num is ${i}`);
+                    break;
+                }
+            }
+       }
+    }
+
+    //largest prime number
+    function largest(up=0,low=0){
+        let count=0;
+       for(let i=up;i>=low;i--)
+       {
+            if(isPrime(i)){
+                count++;
+                if(count<10){
+                    console.log(`${count} largest prime num is ${i}`);
+                    break;
+                }
+            }
+       }
+    }
+
+    //alternative prime numbers
+    function alterPrime(up=0,low=0){
+        let count=0;
+        let row="";
+       for(let i=low;i<=up;i++)
+       {
+            if(isPrime(i)){
+                count++;
+                if(count%2!=0){
+                    row=row+i+" ";
+                }
+            }
+       }
+       console.log(`Alternative Prime numbers between ${low} and ${up} are ${row}`)
+    }
+
+    main();
+    function main(){
+        largest(30);
+        // let num = prompt("Enter a number");
+        // if(num==""){
+        //     console.log("Enter valid input!!!");
+        //     return;
+        // }
+        // if(num==null) return;
+        // num = Number(num);
+        // if(isNaN(num)||num<0){
+        //     console.log("It is invalid or negetive input!!!");
+        //     return;
+        // }
+        // console.log(`is ${num} prime Num ? ${isPrime(num)}`);
+    }
+
+   </script>
+    <title>PrimeNum</title>
+</head>
+<body>
+    <H1>Prime Number</H1>
+</body>
+</html>

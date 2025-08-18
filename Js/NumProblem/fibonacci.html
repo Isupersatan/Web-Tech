@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function fibonoacci(start,end){
+            let first=0,second=1,row="";
+            while(first<=end){
+               if(first>=start) row=row+first+" ";
+                let third=first+second;
+                first=second;
+                second=third;
+            }
+            console.log(row);
+        }
+
+        main();
+        function main(){
+            fibonoacci(2,10);
+        }
+    </script>
+    <title>fibonacci</title>
+</head>
+<body>
+    <h1>fibonacci</h1>
+</body>
+</html>
