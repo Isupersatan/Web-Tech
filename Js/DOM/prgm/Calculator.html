@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        div>h1{
+            margin: 0px;
+        }
+        div{
+            border: 5px solid red;
+            background-color: yellow;
+            text-align: center;
+            color: blue;
+        }
+        div>button{
+            border: 0px;
+            margin: 10px;
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+
+        div>button:hover{
+            color: blue;
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1> <span id="heading">Arithmetic Operation of Two Numbers:</span> 
+            <span id="display">Res</span>
+        </h1>
+        <button onclick="sum()">Addition</button>
+        <button onclick="sub()">Subtraction</button>
+        <button onclick="mul()">Multiplication</button>
+        <button onclick="divide()">Divition</button>
+        <button onclick="mod()">Modulas</button>
+    </div>
+
+    <script>
+        let heading = document.getElementById("heading");
+        let spanTag=document.getElementById("display");
+        console.log(spanTag);
+
+        function sum(){
+            heading.textContent="Addition of Two Numbers:"
+            let n1=10, n2 = 20;
+            spanTag.textContent=n1+n2;
+        }
+
+        function sub(){
+            heading.textContent="Subtraction of Two Numbers:"
+            let n1=10, n2 = 20;
+            spanTag.textContent=n2-n1;
+        }
+
+        function mul(){
+            heading.textContent="Multiplication of Two Numbers:"
+            let n1=10, n2 = 20;
+            spanTag.textContent=n1*n2;
+        }
+
+        function divide(){
+            heading.textContent="Divition of Two Numbers:"
+            let n1=10, n2 = 20;
+            spanTag.textContent=n2/n1;
+        }
+
+        function mod(){
+            heading.textContent="Modulas of Two Numbers:"
+            let n1=10, n2 = 20;
+            spanTag.textContent=n1%n2;
+        }
+    </script>
+</body>
+</html>
