@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Virat</title>
+    <link rel="stylesheet" href="../Bootstrap/css/bootstrap.css">
+    <style>
+        .navbar-brand {
+            color: orange;
+        }
+        .virat{
+            color: rgb(16, 109, 240);
+        }
+        .card-footer{
+            background-color:  rgb(16, 109, 240);
+        }
+        .card-text{
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar bg-primary">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">
+                <h4>🏆INDIA🏆</h4>
+            </a>
+        </div>
+    </nav>
+    <section class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header bg-primary">
+                        <img src="../Images/virat.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="card-body text-center">
+                        <h4 class="virat">Virat Kohli</h4>
+                        <h2 class="card-text">18</h2>
+                        <button class="btn btn-danger" id="dislike-btn">
+                            <i class="fa-solid fa-thumbs-down">👎</i>
+                        <span id="dislike">0</span></button>
+
+                        <button class="btn btn-success" id="like-btn">
+                            <i class="fa-solid fa-thumbs-down">👍</i>
+                        <span id="like">0</span></button>
+                    </div>
+                    <div class="card-footer" >
+                        <h4 class="card-text">Likes & Dislikes : <span id="total">0</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

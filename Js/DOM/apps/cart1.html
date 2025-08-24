@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Amazon-Cart</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        nav{
+            background-color: rgb(1, 1, 79);
+            color: white;
+            padding: 10px;
+        }
+        #product-section{
+            margin: 10px;
+        }
+        #product-section>.product-container{
+            box-shadow: 0px 0px 10px black;
+            width: 250px;
+            height: 300px;
+        }
+
+        .product-container>img{
+            width: inherit;
+            height: 220px;
+        }
+
+        .product-container>.product-content{
+            text-align: center;
+        }
+
+        .icon{
+            border-radius: 10px;
+            padding: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>🛒 Amazon</h1>
+    </nav>
+    <section id="product-section">
+        <div class="product-container">
+            <img src="../../../Images/mobile.jpeg" alt="Image not found">
+            <div class="product-content">
+                <h2>Iphone 13 pro</h2>
+                <h4>$ 90000</h4>
+                <h3>
+                    <button class="icon" onclick="decQty()">➖</button>
+                    <span id="product-qty"></span>
+                    <button class="icon" onclick="incQty()">➕</button>
+                </h3>
+
+            </div>
+        </div>
+    </section>
+    <footer style="margin-bottom: 500px;"></footer>
+    <script>
+        let qtyEl=document.getElementById("product-qty");
+        let qty=1;
+        qtyEl.textContent=qty
+        
+        function incQty(){
+            qty++;
+            qtyEl.textContent=qty
+        }
+
+        function decQty(){
+            if(qty>1){
+                qty--;
+                qtyEl.textContent=qty
+            }else{
+                qtyEl.textContent=qty
+            }
+        }
+    </script>
+</body>
+</html>
