@@ -8,13 +8,16 @@
         .navbar-brand {
             color: orange;
         }
-        .virat{
+
+        .virat {
             color: rgb(16, 109, 240);
         }
-        .card-footer{
-            background-color:  rgb(16, 109, 240);
+
+        .card-footer {
+            background-color: rgb(16, 109, 240);
         }
-        .card-text{
+
+        .card-text {
             color: orange;
         }
     </style>
@@ -38,21 +41,53 @@
                     <div class="card-body text-center">
                         <h4 class="virat">Virat Kohli</h4>
                         <h2 class="card-text">18</h2>
-                        <button class="btn btn-danger" id="dislike-btn">
+                        <button class="btn btn-danger" onclick="disInc()">
                             <i class="fa-solid fa-thumbs-down">👎</i>
-                        <span id="dislike">0</span></button>
+                            <span id="dislike"></span></button>
 
-                        <button class="btn btn-success" id="like-btn">
+                        <button class="btn btn-success" onclick="likeInc()">
                             <i class="fa-solid fa-thumbs-down">👍</i>
-                        <span id="like">0</span></button>
+                            <span id="like"></span></button>
                     </div>
-                    <div class="card-footer" >
-                        <h4 class="card-text">Likes & Dislikes : <span id="total">0</span></h4>
+                    <div class="card-footer">
+                        <h4 class="card-text">Likes & Dislikes : <span id="total"></span></h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        let disLike = document.getElementById("dislike");
+        let like = document.getElementById("like");
+        let total = document.getElementById("total");
+
+       let disCount = localStorage.getItem("disLike") ? +localStorage.getItem("disLike") : 0;
+        let likeCount = localStorage.getItem("like") ? +localStorage.getItem("like") : 0;
+        let totalCount = localStorage.getItem("total") ? +localStorage.getItem("total") : 0;
+        disLike.textContent=disCount;
+        like.textContent=likeCount;
+        total.textContent=totalCount;
+        function disInc() {
+            disCount++;
+            localStorage.setItem("disLike", disCount);
+            disLike.textContent = localStorage.getItem("disLike");
+            updateTotal();
+        }
+
+        function likeInc() {
+            likeCount++;
+            localStorage.setItem("like", likeCount);
+            like.textContent = localStorage.getItem("like");
+            updateTotal();
+        }
+
+        function updateTotal() {
+            totalCount = disCount + likeCount;
+            localStorage.setItem("total", totalCount);
+            total.textContent = localStorage.getItem("total")
+        }
+    </script>
 </body>
 
 </html>

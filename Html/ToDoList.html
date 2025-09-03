@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">🧾 ToDo-List</a>
+        </div>
+    </nav>
+
+    <section class="container-fluid mt-5 ">
+        <div class="row">
+            <div class="col-5 m-auto">
+                <div class="card border-dark ">
+                    <div class="card-header border-dark text-center text-white bg-dark ">
+                        <h1>Add Your Task</h1>
+                    </div>
+                    <div class="card-body">
+                        <form id="form-task">
+                            <div>
+                                <input type="text" placeholder="Enter Your Task" class="form-control" id="submit-ele">
+                            </div>
+                            <div>
+                                <input type="Submit" class="btn mt-2 text-white bg-dark">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid mt-5 ">
+        <div class="row">
+            <div class="col-5 m-auto">
+                <div class="card border-dark ">
+                    <div class="card-body">
+                       <ul class="list-group" id="display-task"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="margin-bottom: 500px;"></footer>
+
+    <script src="../Js/DOM/apps/ToDoList.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Bootstrap/css/bootstrap.css">
+    <style>
+        .bg-dark {
+            background-color: black !important;
+            color: white !important;
+        }
+
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">🧾 Jspider</a>
+
+            <button class="btn btn-outline-warning" onclick="showModal()">Show Modal</button>
+        </div>
+    </nav>
+
+    <section class="container-fluid mt-5 ">
+        <div class="row">
+            <div class="col-6 m-auto hidden" id="hidden-layout">
+                <div class="card border-dark ">
+                    <div class="card-header border-dark">
+                        <div class="row  text-center">
+                            <div class="col-3">
+                                <button class="btn" id="one">1</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn" id="two">2</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn" id="three">3</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-outline-danger" onclick="closeModal()">❌</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 id="msg"> </h3>
+                    </div>
+                    <div class="card-footer border-dark">
+                        <div class="row  text-center">
+                            <div class="col-4 ">
+                                <button class=" btn btn-dark" onclick="decUpdate()">&larr; prev</button>
+                            </div>
+                            <div class="col-4"></div>
+                            <div class="col-4">
+                                <button class="btn btn-dark" onclick="incUpdate()">next &rarr; </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        let msgEle = document.querySelector('#msg');
+        let oneEle = document.querySelector('#one');
+        let twoEle = document.querySelector('#two');
+        let threeEle = document.querySelector("#three");
+        let step = 1;
+        let msgArr = ['Attend Class', 'Practice Assignment', 'Get Job'];
+        msgEle.textContent = msgArr[step - 1];
+        updateMsg();
+        function updateMsg() {
+            msgEle.textContent = `step ${step} : ${msgArr[step - 1]}`;
+            oneEle.classList.remove('bg-dark');
+            twoEle.classList.remove('bg-dark');
+            threeEle.classList.remove('bg-dark');
+            if (step === 1) oneEle.classList.add('bg-dark');
+            if (step === 2) twoEle.classList.add('bg-dark');
+            if (step === 3) threeEle.classList.add('bg-dark');
+
+        }
+
+
+        function incUpdate() {
+            if (step < 3) {
+                step++;
+                updateMsg();
+            }
+        }
+
+
+        function decUpdate() {
+            if (step > 1) {
+                step--;
+                updateMsg();
+            }
+        }
+
+        let hideEle = document.getElementById('hidden-layout');
+
+        function showModal(){
+            hideEle.classList.remove('hidden');
+        }
+
+        function closeModal(){
+            hideEle.classList.add('hidden');
+        }
+
+        document.addEventListener('keyup',function(event){
+            if(event.key=="Escape" && !hideEle.classList.contains('hidden')){
+                 closeModal();
+            }
+        })
+    </script>
+
+</body>
+
+</html>
