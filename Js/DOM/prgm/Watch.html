@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../Bootstrap/css/bootstrap.css">
+    <title>Timer</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark  text-white">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">🧾 Jspider</a>
+            <div>
+                <span id="hr">00</span>:<Span id="min">00</Span>:<span id="sec">00</span>
+            </div>
+        </div>
+    </nav>
+
+    
+    <script>
+        let hrTag = document.getElementById('hr');
+        let minTag = document.getElementById('min');
+        let secTag = document.getElementById('sec');
+
+        function digitalClock() {
+            let date = new Date();
+            let sec = date.getSeconds();
+            let min = date.getMinutes();
+            let hr = date.getHours();
+
+            hrTag.innerText = hr>9? hr: "0"+hr;
+            minTag.innerText = min>9? min: "0"+min ;
+            secTag.innerText = sec>9? sec: "0"+sec;
+        }
+        digitalClock();
+
+        setInterval(()=>digitalClock(),1000);
+    </script>
+</body>
+
+</html>

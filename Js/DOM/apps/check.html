@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let arr=[{id:101},20,30,40];
+let arr1=[...arr];
+let arr2=arr;
+arr2[3]=60;
+for(let i in arr1){
+    if(i==0){
+        arr1[i]={id:102}
+    }
+}
+console.log(arr);
+console.log(arr1);
+console.log(arr2);
+    </script>
+</body>
+
+</html>
